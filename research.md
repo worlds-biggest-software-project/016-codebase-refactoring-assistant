@@ -69,14 +69,39 @@ A more conservative proxy: Deloitte's 2026 study estimates technical debt consum
 - Sourcegraph raised $150M Series D at $2.625B valuation (2021); launched Cody AI in 2023.
 - Snyk (adjacent space) reached unicorn status; acquired by Broadcom discussions ongoing as of 2025.
 
+## Recent Market Research (May 2026)
+
+### Market Size & Growth
+- **Legacy Software Modernization**: USD 15.14B (2025) → USD 17.57B (2026) at 16.1% CAGR
+- **Application Modernization Services**: USD 28.4B (2024) → USD 101.9B (2033) at 15.1% CAGR
+- **Refactoring Segment**: 39.3% market share in mainframe modernization (2025)
+- **AI-Powered Modernization**: USD 5.67B (2024) → USD 33.4B (2032) at 24.8% CAGR
+- **Legacy Code AI Modernization**: USD 1.82B (2024) → USD 14.17B (2033) at 25.7% CAGR
+- **Enterprise Context**: Google ~30%, Microsoft ~20-30% of codebase now AI-generated
+
+### Recent Academic Work (2025)
+- **Migrating Code At Scale With LLMs At Google**: 74.45% of code changes LLM-generated across 39 migrations over 12 months
+- **Accelerating Large-Scale Test Migration with LLMs (Airbnb)**: 3.5K files migrated in 6 weeks vs. 1.5 years estimated manually
+- **LLM-Driven Code Refactoring: Opportunities and Limitations** (ICSE 2025 IDE Workshop)
+
+### Emerging Standards
+- **NIST SP 800-218 (SSDF)**: Secure Software Development Framework requiring regression-free automated transformations
+- **ISO 5055 (CISQ)**: Automated measurement of software quality; provides vendor-neutral technical debt baseline
+
 ## AI-Native Opportunity
 
 - **Semantic refactoring vs. syntactic rules:** Existing rule-based tools (SonarQube, Semgrep) flag issues via pattern matching but cannot explain *why* a pattern matters in the specific business context of the calling code. An AI-native tool can reason about intent, coupling, and downstream impact, generating refactorings that are contextually appropriate rather than mechanically correct.
 
-- **Cross-repository, polyglot transformations:** OpenRewrite excels at Java but struggles with mixed-language monorepos. LLMs can understand idiomatic patterns across Go, Python, TypeScript, Rust, and Java simultaneously, enabling a single migration campaign to refactor API contracts and their consumers across language boundaries.
+- **Cross-repository, polyglot transformations:** OpenRewrite excels at Java but struggles with mixed-language monorepos. LLMs can understand idiomatic patterns across Go, Python, TypeScript, Rust, and Java simultaneously, enabling a single migration campaign to refactor API contracts and their consumers across language boundaries. Google's 2025 case study proves this at scale.
 
 - **Prioritization using historical signals:** No current tool combines CodeScene's VCS-behavioral hotspot detection with LLM-powered transformation planning. An AI-native assistant could automatically triage the backlog — "this file is changed 40 times per sprint and is the most complained-about in PR reviews; here is a concrete refactoring plan with risk assessment" — closing the gap between identifying debt and acting on it.
 
-- **Test-anchored safe execution:** Current AI coding tools generate refactored code but leave the developer responsible for verifying safety. An AI-native system that automatically generates characterization tests *before* refactoring (using mutation testing or property-based approaches), executes the transformation, and then validates the test suite provides the safety guarantee enterprises require for autonomous operation.
+- **Test-anchored safe execution:** Current AI coding tools generate refactored code but leave the developer responsible for verifying safety. An AI-native system that automatically generates characterization tests *before* refactoring (using mutation testing or property-based approaches), executes the transformation, and then validates the test suite provides the safety guarantee enterprises require for autonomous operation. Google's 6-week migration vs. 1.5-year estimate shows the commercial impact.
 
-- **Continuous technical debt budgeting:** Existing tools produce reports; enterprises still lack a system that actively allocates a "refactoring budget" per sprint, assigns specific tasks to developers based on skill and context familiarity, and tracks debt reduction against business KPIs. An open-source AI-native platform could fill this orchestration gap where current tools only provide dashboards.
+- **Continuous technical debt budgeting:** Existing tools produce reports; enterprises still lack a system that actively allocates a "refactoring budget" per sprint, assigns specific tasks to developers based on skill and context familiarity, and tracks debt reduction against business KPIs. Technical debt consumes 21-40% of IT budgets per Deloitte 2026; addressing this gap is a multi-billion-dollar opportunity.
+
+### New References (2025-2026)
+- [Migrating Code At Scale With LLMs At Google](https://arxiv.org/abs/2504.09691)
+- [Accelerating Large-Scale Test Migration with LLMs - Airbnb](https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/)
+- [LLM-Driven Code Refactoring: Opportunities and Limitations](https://seal-queensu.github.io/publications/pdf/IDE-Jonathan-2025.pdf)
+- [Deloitte 2026 - Technical Debt's Penalty on Value and Growth](https://www.deloitte.com/us/en/insights/topics/technology-management/technical-debt-impact.html)
